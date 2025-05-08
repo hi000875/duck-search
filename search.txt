@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Page</title>
+</head>
+<body>
+  <h2>Search the Web</h2>
+  <form onsubmit="searchDuckDuckGo(); return false;">
+    <input type="text" id="query" placeholder="Search..." style="width:300px">
+    <input type="submit" value="Search">
+  </form>
+
+  <script>
+    function searchDuckDuckGo() {
+      const query = document.getElementById("query").value;
+      const url = "https://lite.duckduckgo.com/lite/?q=" + encodeURIComponent(query);
+      window.open(url, "_blank"); // Open in new tab
+    }
+  </script>
+</body>
+</html>
