@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Page</title>
+  </head>
+  <body>
+    <h2>Search the Web</h2>
+    <form onsubmit="searchDuckDuckGo(); return false;">
+      <input type="text" id="query" placeholder="Search..." style="width:300px">
+      <input type="submit" value="Search">
+    </form>
+
+    <br>
+    <iframe id="results" width="100%" height="600" style="border:1px solid #ccc;"></iframe>
+
+    <script>
+      function searchDuckDuckGo() {
+        var query = document.getElementById("query").value;
+        var url = "https://lite.duckduckgo.com/lite/?q=" + encodeURIComponent(query);
+        document.getElementById("results").src = url;
+      }
+    </script>
+  </body>
+</html>
